@@ -1,0 +1,22 @@
+
+import random
+def number_guessing_game():
+    start_bound = int(input("Enter the starting number of the range: "))
+    end_bound = int(input("Enter the ending number of the range: "))
+    random_number = random.randint(start_bound, end_bound)
+
+    print(f"\nI have generated a random number between {start_bound} and {end_bound}.Try to guess it...!")
+    attempts = 0
+    guessed_correctly = False
+
+    while not guessed_correctly:
+        user_guess = int(input("Enter your guessed number: "))
+        attempts += 1
+        if user_guess < random_number:
+            print("Too low! Try again.")
+        elif user_guess > random_number:
+            print("Too high! Try again.")
+        else:
+            guessed_correctly = True
+            print(f"Congratulations! You guessed the number in {attempts} attempts.")
+number_guessing_game()
